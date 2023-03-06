@@ -39,6 +39,8 @@ NOTE: Use VSCode for this project starting with the following files below. Also,
 
 When the project is completed, commit the final changes, sync all pull requests, and each member should submit their respective GitHub links(though the code in each should be the same)
 
-
+Tiffany - def __init__, def t_ticket
+An - def pf_parking, l_garage
+Dorcas - def run, notes
 ###### List group responsiblities below:
 ###### Provide name and approxamite line numbers where each person wrote their code
