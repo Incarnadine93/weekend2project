@@ -7,16 +7,20 @@ class parkingGarage():
     #     self.tickets.pop(ticket)
     #     self.p_spaces.pop()
     def t_ticket(self):
-        self.tickets.pop(self)
-        self.p_spaces.pop(p_space)
+        ticket = []
+        p_space = []
+        ticket.remove(-1)
+        p_space.remove([-1])
+        print(ticket)
     def pf_parking(self, payment):
-        self.payment = input(int("Please submit payment amount: "))
+        self.payment = payment
+        payment = input(int("Please submit payment amount: "))
         if self.payment != 0:
             print("Your payment has been accepted. You have 15 minutes to leave.")
-            self.c_ticket[paid] = True
+            self.c_ticket["paid"] = True
         else:
             print("No payment has been received")
-            parkingGarage(pf_parking)
+            parkingGarage(pf_parking())
     def l_garage(self):
         if self.c_tickets[0] == True:
             print("Thank you, have a nice day")
@@ -27,7 +31,7 @@ class parkingGarage():
             if x != 0:
                 print("Thank you, have a nice day!")
 
-
+parker = parkingGarage([1,1,1,1,1,1,1,1,1,1], [1,1,1,1,1,1,1,1,1,1], {})
 def run():
     while True:
         resp = input("Take ticket, pay for parking, or leave garage?")
@@ -40,8 +44,6 @@ def run():
             parkingGarage.l_garage()
             break
 
-Carlson = parkingGarage([], [], {})
-ticket = (1, 1, 1, 1, 1)
 run()
 
 

@@ -1,31 +1,46 @@
 class parkingGarage():
-    def __init__(self, ticket, p_space, c_ticket):
-        self.tickets = ticket
-        self.p_spaces = p_space
-        self.c_tickets = c_ticket
+    def __init__(self):
+        self.tickets = 10 #tickets available
+        self.p_spaces = 10 #parking spaces available
+        self.c_ticket = {"paid":False} #current ticket
     # def t_ticket(self):
     #     self.tickets.pop(ticket)
     #     self.p_spaces.pop()
     def t_ticket(self):
-        self.tickets.pop(self)
-        self.p_spaces.pop(p_space)
-    def pf_parking(self, payment):
-        self.payment = input(int("Please submit payment amount: "))
-        if self.payment != 0:
-            print("Your payment has been accepted. You have 15 minutes to leave.")
-            self.c_ticket[paid] = True
-        else:
-            print("No payment has been received")
-            parkingGarage(pf_parking)
+        self.tickets -= 1
+        print(f"{self.tickets} tickets available")
+        self.p_spaces -= 1
+        print(f"{self.p_spaces} parking spaces available")
+    def pf_parking(self):
+        while True:
+            payment = int(input("Please submit payment amount of $10: "))
+            if payment == 10: #parking is 10 dollars
+                print("Your payment has been accepted. You have 15 minutes to leave.")
+                self.c_ticket["paid"] = True 
+                break
+            elif payment > 0 and payment < 10:
+                print("Payment declined. Please submit proper payment amount")
+                payment = 0
+            elif payment == 0:
+                print("No payment has been received")
     def l_garage(self):
-        if self.c_tickets[0] == True:
+        if self.c_ticket["paid"] == True:
             print("Thank you, have a nice day")
-            self.p_spaces.append(1)
-            self.tickets.append(1)
+            self.p_spaces += 1
+            print(f"{self.p_spaces} parking spaces available")
+            self.tickets +=1
+            print(f"{self.tickets} tickets available")
         else:
-            X = input("Ticket has not been paid. Please submit payment amount: ")
-            if x != 0:
-                print("Thank you, have a nice day!")
+            while True:
+                X = int(input("Ticket has not been paid. Please submit payment amount of $10: "))
+                if X == 10:
+                    print("Thank you, have a nice day!")
+                    break
+                elif X > 0 and X < 10:
+                    print("Payment declined. Please submit proper payment amount")
+                    X = 0
+                else:
+                    print("No payment has been received")
 
 
 def run():
@@ -33,15 +48,14 @@ def run():
         resp = input("Take ticket, pay for parking, or leave garage?")
         
         if resp.lower() == "take ticket":
-            parkingGarage.t_ticket()
+            Carlson.t_ticket()
         elif resp.lower() == "pay for parking":
-            parkingGarage.pf_parking()
+            Carlson.pf_parking()
         elif resp.lower() == "leave garage":
-            parkingGarage.l_garage()
+            Carlson.l_garage()
             break
 
-Carlson = parkingGarage([], [], {})
-ticket = (1, 1, 1, 1, 1)
+Carlson = parkingGarage()
 run()
 
 
